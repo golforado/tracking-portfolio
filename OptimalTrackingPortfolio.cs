@@ -18,12 +18,8 @@ namespace FE
         public static (double[], double, double) TrackingPortolio(TrackingPortolioArgs args)
         {
             Cplex model = new Cplex();
-            //string json = Utf8Json.JsonSerializer.ToJsonString(args);
-            //System.IO.File.WriteAllText("C:/epic/tmp/TrackingPortfolioArgs.json", json);
-
 
             int N = args.InstrumentForecasts.Length;
-
 
             ILPMatrix lp = model.AddLPMatrix();
 
