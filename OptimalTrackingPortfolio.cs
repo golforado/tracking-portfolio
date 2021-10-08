@@ -9,7 +9,7 @@ namespace FE
         public class TrackingPortolioArgs
         {
             public int[] InitialContracts;
-            public double[] InstrumentForecasts, ContratsPerUnit, CostPerTrade;
+            public double[] InstrumentForecasts, ContractsPerUnit, CostPerTrade;
             public double[,] CorrelationMatrix; 
             public double ShadowCost, UnitSize;
             public int MaxContracts;
@@ -55,8 +55,8 @@ namespace FE
             {
                 for (int j = 0; j < N; ++j)
                 {
-                    INumExpr wtrack_i = model.Diff(args.InstrumentForecasts[i], model.Prod(1.0 / args.ContratsPerUnit[i], optContracts[i] ));
-                    INumExpr wtrack_j = model.Diff(args.InstrumentForecasts[j], model.Prod(1.0 / args.ContratsPerUnit[j], optContracts[j] ));
+                    INumExpr wtrack_i = model.Diff(args.InstrumentForecasts[i], model.Prod(1.0 / args.ContractsPerUnit[i], optContracts[i] ));
+                    INumExpr wtrack_j = model.Diff(args.InstrumentForecasts[j], model.Prod(1.0 / args.ContractsPerUnit[j], optContracts[j] ));
                     trackingCovar = model.Sum(trackingCovar, model.Prod(args.CorrelationMatrix[i, j], model.Prod(wtrack_i, wtrack_j)));
                 }
             }
