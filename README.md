@@ -12,7 +12,7 @@ Modelling the tracking covariance is straightforward:
 where x is defined as an integer variable representing the number of contracts of the portfolio, 𝜌_𝑚𝑘𝑡  is the correlation matrix and 𝜇 encapsulates the target risk multiplier with regards to the unit size.
 
 
-For the execution costs I need to model to model |𝑥−𝑥_0 | with and extra variable z and additional constraints:
+For the execution costs I need to model |𝑥−𝑥_0 | with and extra variable z and additional constraints:
 ![image](https://user-images.githubusercontent.com/5354945/136517917-e558f395-6695-4e83-b113-07105c400cc3.png)
 
 and define the total cost as
